@@ -5,31 +5,32 @@
 
 using namespace std;
 
-void print_vector(vector<string> vector){
-  for(string item : vector){
-    cout << item << endl;
-  }
+void swap(int &a, int &b){
+  int temp = a;
+  a = b;
+  b = temp;
+}
+
+void swap(string &a, string &b){
+  string temp = a;
+  a = b;
+  b = temp;
+
+
 }
 
 int main()
 {
-  string filename;
 
-  cout << "Enter filename: ";
-  cin >> filename;
+  int a = 10;
+  int b = 15;
+  swap(a, b);
 
-  ifstream file(filename);
-  
-  if(!file.is_open()){
-    cout << "Could not open file";
-    return -1;
-  }
+  string c = "Hello";
+  string d = "World";
+  swap(c, d);
+  cout << "a: " << a << endl << "b: " << b << endl;
 
-  vector<string> names;
-  string input;
-
-  while(getline(file, input)){
-    names.push_back(input);
-  }
-    print_vector(names);
+  cout << "a: " << c << endl << "b: " << d << endl;
+  return 0;
 }
