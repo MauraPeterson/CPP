@@ -25,6 +25,8 @@ class User
 
     void set_status(string status);
 
+    virtual void output();
+
     friend void output_status(User user);
     friend ostream& operator << (ostream &output, const User user);
 

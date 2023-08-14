@@ -1,9 +1,20 @@
 #include <iostream>
 #include <vector>
-#include "user_utils.h"
-#include "user_utils.cpp"
+
+#include "user.h"
+#include "teacher.h"
+
+// included for the visual studio c++ compiler
+#include "user.cpp"
+#include "teacher.cpp"
+
 
 using namespace std;
+
+void do_something(User &user)
+{
+  user.output();
+}
 
 int main()
 {
@@ -35,9 +46,22 @@ int main()
   cout << user3;
   User user4;
 
+  /*
   cout << endl << "Enter User: ";
   cin >> user4;
   cout << user4;
+  */
+
+  Teacher teacher1;
+  teacher1.output();
+
+  teacher1.first_name = "Teach";
+  teacher1.last_name = "Er";
+
+  cout << teacher1;
+
+  User& u = teacher1;
+  do_something(u);
 
   return 0;
 }

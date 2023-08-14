@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include "user_utils.h"
+#include "user.h"
 
 using namespace std;
 
@@ -24,6 +24,11 @@ User::User(string first_name, string last_name, string status)
 User::~User()
 {
   user_count--;
+}
+
+void User::output()
+{
+  cout << "I am a user" << endl;
 }
 
 string User::get_status()
@@ -52,7 +57,7 @@ int User::user_count = 0;
 
 ostream& operator << (ostream &output, const User user)
 {
-  output << user.first_name << " " << user.last_name << ": " << user.status;
+  output << user.first_name << " " << user.last_name << ": " << user.status << endl;
   return output;
 }
 
